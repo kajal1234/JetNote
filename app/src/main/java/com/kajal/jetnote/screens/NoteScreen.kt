@@ -10,8 +10,8 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.Notifications
-import androidx.compose.material3.Divider
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -36,7 +36,6 @@ import com.kajal.jetnote.components.NoteButton
 import com.kajal.jetnote.components.NoteInputText
 import com.kajal.jetnote.data.NotesDataSource
 import com.kajal.jetnote.model.Note
-import java.time.format.DateTimeFormatter
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -84,7 +83,7 @@ fun NoteScreen(
                 }
             })
         }
-        Divider(modifier = Modifier.padding(10.dp))
+        HorizontalDivider(modifier = Modifier.padding(10.dp))
         LazyColumn {
             items(notes) { note ->
                 NoteRow(note = note) {
@@ -122,10 +121,10 @@ fun NoteRow(
                 text = note.description,
                 style = MaterialTheme.typography.bodyMedium
             )
-/*            Text(
-                text = note.entryDate.format(DateTimeFormatter.ofPattern("EEE, d MMM")),
-                style = MaterialTheme.typography.labelSmall
-            )*/
+            /*            Text(
+                            text = note.entryDate.format(DateTimeFormatter.ofPattern("EEE, d MMM")),
+                            style = MaterialTheme.typography.labelSmall
+                        )*/
         }
     }
 }

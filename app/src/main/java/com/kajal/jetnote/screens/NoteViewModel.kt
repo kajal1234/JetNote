@@ -21,7 +21,7 @@ class NoteViewModel @Inject constructor(private val repository: NoteRepository) 
         //noteList.addAll(NotesDataSource().loadNotes())
         viewModelScope.launch(Dispatchers.IO) {
             repository.getAllNotes().collect { listOfNotes ->
-                if (listOfNotes.isNullOrEmpty().not()) {
+                if (listOfNotes.isEmpty().not()) {
                     _noteList.value = listOfNotes
                 }
             }
