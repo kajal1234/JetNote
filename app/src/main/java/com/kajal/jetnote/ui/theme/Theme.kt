@@ -1,3 +1,5 @@
+@file:Suppress("DEPRECATION")
+
 package com.kajal.jetnote.ui.theme
 
 import android.app.Activity
